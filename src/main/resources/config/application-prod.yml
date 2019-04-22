@@ -1,0 +1,19 @@
+logging:
+    level:
+        ROOT: INFO
+        com.zedelivery.pontoDeVenda: INFO
+
+spring:
+    profiles:
+        active: prod
+        include:
+            - swagger
+    devtools:
+        restart:
+            enabled: false
+        livereload:
+            enabled: false
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: zedelivery

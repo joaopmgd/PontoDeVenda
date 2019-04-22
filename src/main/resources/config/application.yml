@@ -1,0 +1,33 @@
+management:
+    endpoints:
+        web:
+            base-path: /management
+            exposure:
+                include: ["configprops", "env", "health", "info", "threaddump", "logfile" ]
+    endpoint:
+        health:
+            show-details: always
+    info:
+        git:
+            mode: full
+
+spring:
+    profiles:
+        active: local
+        include:
+            - swagger
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
+    jackson:
+        serialization:
+            indent-output: true
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: zedelivery
+
+server:
+    port: 8080

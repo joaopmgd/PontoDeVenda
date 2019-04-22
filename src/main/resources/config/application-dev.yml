@@ -1,0 +1,26 @@
+logging:
+    level:
+        ROOT: DEBUG
+        com.zedelivery.pontoDeVenda: INFO
+
+
+spring:
+    profiles:
+        active: dev
+        include:
+            - swagger
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: true
+    jackson:
+        serialization:
+            indent-output: true
+    data:
+        mongodb:
+            uri: mongodb://localhost:27017
+            database: zedelivery
+
+server:
+    port: 8080
